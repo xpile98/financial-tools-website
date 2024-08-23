@@ -43,8 +43,8 @@ const MainPage = () => {
                     {tool.name}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small" href={tool.link}>
+                <CardActions>                  
+                  <Button component={Link} to="/#/cagr-calculator" size="small" fullWidth>
                     사용하기
                   </Button>
                 </CardActions>
