@@ -1,11 +1,14 @@
 {
+  "homepage": "https://xpile98.github.io/financial-tools-website",
   "name": "financial-tools-website",
   "version": "0.1.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "private": true,
   "dependencies": {
@@ -31,4 +34,7 @@
       "last 1 safari version"
     ]
   },
-  
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
