@@ -9,7 +9,7 @@ import LoanRepaymentCalculator from './components/LoanRepaymentCalculator';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL || "/"}>
       <Container>
         <Routes>
           <Route path="/" element={<MainPage />} />
