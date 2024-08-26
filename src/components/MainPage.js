@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Container, Grid, Card, CardContent, CardActions, Button, Link } from '@mui/material';
+import { AppBar, Toolbar, Typography, Container, Grid, Card, CardContent, CardActions, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { Calculator, TrendingUp, PieChart, Landmark } from 'lucide-react';
 
 const tools = [
@@ -10,17 +11,18 @@ const tools = [
 ];
 
 const MainPage = () => {
+  console.log("MainPage is rendering");
   return (
     <>
       <AppBar position="static" color="primary">
         <Toolbar>
           <Typography variant="h6">금융 계산기 by </Typography>
         </Toolbar>
-        <Link 
+        <a 
             href="https://minicode.tistory.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            sx={{ 
+            style={{ 
               color: 'white', 
               textDecoration: 'none',
               paddingLeft: '16px',
@@ -30,7 +32,7 @@ const MainPage = () => {
             }}
           >
             minicode.tistory.com
-          </Link>
+          </a>
       </AppBar>
       <Container maxWidth="md" sx={{ mt: 4 }}>
         <Grid container spacing={4}>
@@ -43,8 +45,8 @@ const MainPage = () => {
                     {tool.name}
                   </Typography>
                 </CardContent>
-                <CardActions>                  
-                  <Button component={Link} to="/#/cagr-calculator" size="small" fullWidth>
+                <CardActions>
+                  <Button component={Link} to={tool.link} size="small" fullWidth>
                     사용하기
                   </Button>
                 </CardActions>
