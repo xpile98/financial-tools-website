@@ -51,19 +51,19 @@ const LoanRepaymentCalculator = () => {
         const monthlyPrincipal = principal / term;
         totalPayment = 0;
         totalInterest = 0;
-
+      
         let remainingBalance = principal;
         for (let i = 0; i <= term; i++) {
           const interestPayment = remainingBalance * rate;
-          const payment = monthlyPrincipal + interestPayment;
+          const payment = i === 0 ? 0 : monthlyPrincipal + interestPayment; // 첫 달은 상환이 없으므로 0 처리
           totalPayment += payment;
           totalInterest += interestPayment;
-          remainingBalance -= monthlyPrincipal;
-
+          remainingBalance -= i === 0 ? 0 : monthlyPrincipal; // 첫 달에는 원금 감소 없음
+      
           data.push({
             month: i,
             remainingBalance: Math.max(0, remainingBalance),
-            totalPaid: totalPayment - (principal - remainingBalance),
+            totalPaid: totalPayment, // 수정된 부분: 총 상환액 누적
           });
         }
         monthlyPayment = totalPayment / term;
