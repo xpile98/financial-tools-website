@@ -7,7 +7,8 @@ const tools = [
   { name: '연평균 수익률 계산기', icon: <TrendingUp />, link: '/cagr-calculator' },
   { name: '복리 계산기', icon: <PieChart />, link: '/compound-interest-calculator' },
   { name: '평단가 계산기', icon: <Calculator />, link: '/average-price-calculator' },
-  { name: '대출 상환 계산기', icon: <Landmark />, link: '/loan-repayment-calculator' }
+  { name: '대출 상환 계산기', icon: <Landmark />, link: '/loan-repayment-calculator' },
+  { name: '경제 위기 그래프', icon: <Landmark />, link: '/economic-crisis-timeline' }
 ];
 
 const MainPage = () => {
